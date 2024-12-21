@@ -19,10 +19,12 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from exam import views  # O'zingizning app nomingizni ishlating
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home_view, name='home'),  # Asosiy yo'nalish
 ]
-
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
